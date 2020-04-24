@@ -1,0 +1,672 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>The future of meat is lab-grown</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="dfd05436-1c2e-4703-a0c8-fb0dcf421146" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🥩</span></div><h1 class="page-title">The future of meat is lab-grown</h1></header><div class="page-body"><p id="2c08139e-fbc0-44a1-8831-97f9e233224e" class="block-color-gray_background"><a href="https://medium.com/@cassieattard/the-future-of-meat-is-lab-grown-84ba16085ff1https://medium.com/@cassieattard/the-future-of-meat-is-lab-grown-84ba16085ff1">Read this article on Medium</a></p><p id="d16e26f8-5528-445a-828c-61f69d4c1881" class="">
+</p><p id="33a01c85-8daf-4085-ab24-7c245c20003a" class="">Three years ago I went to the Bahamas to do a marine research project and preferably get a nice tan. Somehow, I returned from the trip a vehement environmentalist and vegetarian. If I’m being honest, the vegetarian part didn’t last long. However, my passion for the environment stuck and I have gone 3 years without eating a single bite of beef.</p><p id="7a957184-b42a-403f-9e80-8da6eac809cc" class="">
+</p><p id="a835ef44-96f5-467b-82df-3be14958fd52" class="">Now, I’m not exactly your typical animal lover. I’ve never had a soft spot for pets nor do I enjoy when dogs come too close to me. I’m also not a believer that a vegetarian diet is necessarily a healthier lifestyle. So why did I make this decision? Because, as previously mentioned, I’m an avid environmentalist. <strong>Livestock is responsible for 18% of all greenhouse gas emissions</strong>, beef being the largest contributor by far. That’s <strong>more than cars, ships, planes and all other forms of transport </strong><em><strong>combined</strong></em>! To tell people that I care about the planet and proceed to eat a juicy hamburger would be simply hypocritical.</p><p id="74aa92b9-10f4-45f1-8bb6-7a9ab07d6b1b" class="">
+</p><p id="08c340a4-cc02-4a50-83fd-934cbfea65c3" class="">To be clear, I still <em>like </em>beef.</p><p id="cb99c0e3-6ea2-4240-838c-41554b9da2c2" class="">
+</p><p id="92e1b029-d6a0-402b-a10f-00943eba022e" class="">Looks good to me:</p><p id="6e30ac55-39fc-4aaf-b170-627a54838130" class="">
+</p><figure id="571a6ba3-abfd-42cb-b7d3-5f959ee08a97" class="image"><a href="https://miro.medium.com/max/550/0*LFbB4BrWTKP7bEfA"><img style="width:432px" src="https://miro.medium.com/max/550/0*LFbB4BrWTKP7bEfA"/></a></figure><p id="a3afd038-ede4-4fb5-ad77-d5338bc4de95" class="">
+</p><p id="80fe28c2-1251-42a2-b38c-9feaf1f3dd78" class="">Oooo and this:</p><p id="61e18527-e5fd-491a-a145-d167b978e51a" class="">
+</p><figure id="3cdeb1ca-db44-403b-a4bd-5acc05c6b8a2" class="image"><a href="https://miro.medium.com/max/600/0*NVsDlP4KwfEHWCEZ"><img style="width:432px" src="https://miro.medium.com/max/600/0*NVsDlP4KwfEHWCEZ"/></a></figure><p id="5b1bf232-a54c-4735-b96e-daf298fea7cb" class="">
+</p><p id="4c632174-d851-49ea-99f0-dcd2e9308b80" class="">Beef undeniably tastes great and does a bang-up job of satisfying our evolutionary desires, but right now we are counting on the whole world going vegetarian in order to stop climate change from accelerating to irreversible levels.</p><p id="8af395a1-fefc-4c83-b080-590a97fecfbc" class="">
+</p><p id="7b18c0e2-c252-4da2-adf9-223f9b38d710" class="">Breaking news, this just in! <strong>We have reports saying that the entire world </strong><em><strong>isn’t </strong></em><strong>going to go vegetarian tomorrow.</strong></p><p id="3d5eb3da-e217-41ce-8b7a-7431bbcafd92" class="">
+</p><p id="2d209116-7be0-42bb-9110-7897339dfabf" class="">Shoot.</p><p id="a151f7e0-fdcc-4363-8993-adfd29b49a81" class="">
+</p><p id="ed3e3c7d-2aec-4a1a-bd1f-58283f7607ba" class="">This worried me a lot… Until a few months ago when I discovered the field of cellular agriculture, also known as lab-grown meat. Lab-grown meat is produced <em>in vitro </em>(outside of a living organism)<em> </em>by taking a harmless biopsy from an animal and allowing muscle cells to replicate, creating a mass of muscle that is natural and edible. Cellular agriculture has a dramatically<strong> smaller environmental footprint than livestock, can be more nutritious, cost-effective and safe and could even slow antibiotic resistance.</strong></p><p id="a51a6564-1b99-46af-8203-0605a232ca1d" class="">
+</p><figure id="f24aa61f-cbe8-4782-8068-acdf9a46b429" class="image"><a href="https://miro.medium.com/max/720/0*I9P2cBMPmT8RrwyO"><img style="width:576px" src="https://miro.medium.com/max/720/0*I9P2cBMPmT8RrwyO"/></a></figure><p id="479a3023-97d8-466c-8a82-5e3fa8e287a9" class="">
+</p><p id="2799ce2c-e4e6-43ae-aadf-c95aa69600b0" class="">Allow me to explain.</p><h1 id="c1819f8e-c68f-4588-810a-eed188b507e8" class=""><strong>Land</strong></h1><p id="7b1781c1-69da-4694-8397-3eb098f66ecb" class="">Raising agriculture currently uses 26% of the world’s unfrozen terrestrial land. This land must be cleared to raise the livestock, which is often done by burning forest. Not only does raising livestock require deforestation, but burning large areas of forest also releases an impactful amount of CO2.</p><p id="c5947a1c-1548-436f-896a-4b05eb2aa924" class="">Cellular agriculture requires <strong>99% less land</strong> than traditional farming.</p><h1 id="eb5d71bc-cca3-4f95-94a3-d21d4c101157" class=""><strong>Greenhouse gases</strong></h1><p id="f6b9f8e3-c9b3-45f6-a910-49b51f93207e" class="">As mentioned, livestock farming is a greenhouse gas emitting machine. Due to the burning of forests, slaughter processes, transportation and digestive tracks of the animals (yes, cow farts), livestock is a major international contributor of greenhouse gases.</p><p id="b0eeaa93-b0a7-4253-be44-38d6957e0415" class="">Cellular agriculture emits <strong>95% less greenhouse gas emissions</strong> than traditional farming.</p><h1 id="e4d8aeef-5a38-483c-addc-c683ee099023" class=""><strong>Water</strong></h1><p id="d75ea31b-7623-4559-8a60-3f24d6823993" class="">6809 litres of water are required to make 1 pound of beef. That means it takes 3404 bottles of water to produce a single hamburger. This water is primarily used to grow corn and soy to feed the animals.</p><p id="dce39e54-6ed6-4fa3-8bd6-c89a5281dfa7" class="">
+</p><p id="77282bff-c96c-4f8c-a3e4-e57738658f82" class="">Cellular agriculture requires <strong>95% less water</strong> than traditional farming.</p><p id="7152f28c-f691-4bfb-96a0-58e616d0ca32" class="">
+</p><figure id="68aa73e7-42af-43f5-840c-299a87f87b3a" class="image"><a href="https://miro.medium.com/max/660/0*NuOfe7Xcju_jGld2"><img style="width:528px" src="https://miro.medium.com/max/660/0*NuOfe7Xcju_jGld2"/></a></figure><h1 id="378e2309-08aa-4010-8442-66565b468c40" class=""><strong>Nutrition</strong></h1><p id="d6b93c2e-45c1-424a-b43e-b63f951685a2" class="">For every 100 pounds of protein you feed a cow, only 3 pounds remain in the final meat product. This is a major inefficiency in the food industry. Farmers spend $291 feeding each cow to get $9 worth of protein. Meanwhile, <strong>almost 100% of the nutrients going into lab-grown meat remain in the final product.</strong></p><p id="589c766b-dabd-498c-ba9d-c509c0edc54f" class="">
+</p><p id="d64f6ffd-1743-464e-8538-4b7a886e5b7d" class="">Additionally, humans have gotten very good at genetically manipulating food to be just how we like it. We’ve mastered the art of editing fruit to be unnaturally massive.</p><p id="93830a5a-e6c9-4df6-ab32-fb0b560578b3" class="">
+</p><figure id="949808ff-98f4-493c-a922-088ee083c0a5" class="image"><a href="https://miro.medium.com/max/960/0*bNdhPJJtpXk2giTI"><img style="width:528px" src="https://miro.medium.com/max/960/0*bNdhPJJtpXk2giTI"/></a><figcaption>A strawberry in 2018 vs. 1970</figcaption></figure><p id="107ea7ff-2ffd-46aa-869f-360c4d9fac9b" class="">
+</p><p id="aef7f22b-31d2-45ec-be6c-76381d04cad4" class="">This is good news for the cellular agriculture field.</p><p id="9926d6e8-21c3-4505-94cb-26835a496b4e" class="">
+</p><p id="a628991b-8744-4c58-a0ad-dda70b3a590a" class="">Myostatin is a protein encoded by the MSTN gene which essentially functions to inhibit myogenesis. In doing so, it keeps muscle growth in check. Randomly occurring mutations in the myostatin gene can lead to the promotion of muscle growth in many animals including humans. <strong>Meat could potentially be genetically modified to manipulate the MSTN gene </strong>to promote more lean muscle growth than standard farming strategies.</p><p id="57c297f1-ba05-46a6-89ff-fab8b8b346de" class="">
+</p><p id="e781cb7a-ba5c-40cc-9688-41857bd26105" class="">Lastly, lab-grown meat contains no fat due to the fact that it is simply relicapted muscle cells. To make the meat taste better, fats are added at the end of the process. Farmed meat contains saturated fats (for the sake of the article, we can consider it ‘bad fat’). <strong>Cultured meat has the freedom to use omega 3 fats (‘good fat’) instead to enhance the taste and health benefits </strong>of the meat.</p><h1 id="d9da9ddb-04d8-403f-88de-6c7e16baa267" class=""><strong>Antibiotic resistance</strong></h1><p id="66543f50-b13a-4446-ba08-66eca027ea79" class=""><strong>70–80% of antibiotics in the United States are used for livestock</strong>. In a time where everyone is panicking about the overuse of antibiotics leading to superbugs… this seems insane.</p><p id="ed11441c-3104-4198-87db-e94e4d7b8fc3" class="">
+</p><figure id="48054e9a-0716-4276-a6dd-0bc89cc6882a" class="image"><a href="https://miro.medium.com/max/552/0*_x00bzrx_CnLzW2q"><img style="width:528px" src="https://miro.medium.com/max/552/0*_x00bzrx_CnLzW2q"/></a><figcaption>Yum, antibiotics. His favourite meal of the day.</figcaption></figure><p id="9402fceb-17a2-4955-a2d2-8bc474825ccf" class="">
+</p><p id="40287bbc-ad26-41ca-a93f-24bb5a3118a2" class="">Unfortunately, the current options are a) use 70–80% of our antibiotics on livestock or b) die of E.Coli. So… yeah.</p><p id="d9f2674e-3ad8-48b7-aadf-042657d962d5" class="">
+</p><p id="ad88cd62-9f43-4f3e-a908-283cfa74074c" class=""><strong>Cellular agriculture does not require antibiotics because the process is completely sterile</strong>. The dramatic reduction in the use of antibiotics will substantially slow antibiotic resistance and limit the risk of new pathogenic stains being born.</p><p id="d49a63d4-a0ea-4375-9ab3-d2b185151f5e" class="">
+</p><p id="6d3186e2-9300-4fa9-9a5c-367bec74cd95" class="">Lab-grown meat also <strong>eliminates the possibility of dangerous bacteria such as salmonella and E.Coli</strong> making their way onto supermarket shelves. However, to be certain of this, the medium in which the cells replicate must be replaced (this will be further explained later).</p><h1 id="dddf0026-9b68-478a-baa3-2e493372004c" class=""><strong>Cost</strong></h1><p id="d472ba2e-0042-4d9c-a6e5-7570e6fb18a3" class="">Cellular agriculture cuts out many costs involved in farming meat because there is no animal to raise and kill. Mark Post, the creator of the first lab-grown hamburger, says that in the next 5 years they plan to produce enough meat to feed more than 10,000 people who eat an average amount of beef. At this large scale, they plan to sell the meat at <strong>30% of the cost of current farmed products</strong>. If consumers can remove their preconceptions of the product, it could be a real cash cow (I had to).</p><p id="2c8da9d2-ce7c-41e2-a0cc-f5d7b662650d" class="">
+</p><p id="b4218351-39d2-487e-ac57-3618f8311994" class="">Hopefully, by now you are convinced: lab-grown meat is an exciting, promising and necessary alternative to farmed meat. But how is it made?</p><h1 id="4c9759a3-dba7-43d2-824b-0c5632a4bdb8" class=""><strong>How it works</strong></h1><figure id="19ffb083-7313-4927-9668-e7c07ceea348" class="image"><a href="https://miro.medium.com/max/634/0*cZESvRfJh61ue-HV"><img src="https://miro.medium.com/max/634/0*cZESvRfJh61ue-HV"/></a><figcaption>A general rundown before we get into the meat of it</figcaption></figure><p id="7235aa24-ec59-42ca-a042-09e1c8585179" class="">
+</p><p id="d0e370f6-5710-44b6-b405-35b9e9d6256f" class="">Lab-grown meat is produced by taking myosatellite stem cells from a living animal, placing them in a medium that allows them to proliferate, providing a scaffold and then allowing the meat to grow.</p><p id="dfa1189b-ed09-4cdc-940e-3f4c039b3a72" class="">
+</p><p id="83b4688f-c7fb-4197-967f-81d1ec22309a" class=""><strong>Myosatellite cells or satellite cells are specialized stem cells</strong> that sit naturally along skeletal muscle fibres. They can differentiate into a variety of extremely specialized skeletal muscle cells making them useful to replace dead muscle tissue in stressful situations for an animal. A <strong>harmless biopsy the size of an eraser is taken of muscle cells and satellite cells are identified and extracted</strong>.</p><p id="5ecc18fe-5858-4bf9-abce-69abe235bf0d" class="">
+</p><figure id="89d3f9f3-352d-4fd5-9024-52e2ae3b9062" class="image"><a href="https://miro.medium.com/max/365/1*oz8XrNaQ6iSNMlq7akm7bw.png"><img style="width:432px" src="https://miro.medium.com/max/365/1*oz8XrNaQ6iSNMlq7akm7bw.png"/></a><figcaption>Isolating satellite cells in muscle tissue</figcaption></figure><p id="6fef131f-c5a5-46f4-80ff-7532d5ba14ec" class="">
+</p><p id="d9ad427a-4195-4548-bda4-fcd56fc4530d" class=""><strong>Satellite cells turn into myoblasts. </strong>You can think of myoblasts as the pre-real-deal muscle cells. These <strong>myoblasts become</strong> <strong>myotubes</strong>, which are still not quite real-deal muscle cells. In order to transform into myotubes, the cell needs to feel more at home. The <strong>myoblast has to be tricked into thinking that it’s in a body.</strong> How on earth do we do this?! A scaffold.</p><p id="e843b0db-dd48-4cab-889f-34f44523da8e" class="">
+</p><p id="722390d1-2b7d-433e-ae00-c3de56dbaee6" class=""><strong>A scaffold is a fake extracellular matrix </strong>(ECM). All cells <em>in vivo </em>(inside of a living organism)<em> </em>are attached to and require an ECM to survive and replicate.</p><figure id="b34e0503-017b-45b6-b4d9-f7381d842cf6" class="image"><a href="https://miro.medium.com/max/720/0*GuDKE20d11VsoqZi"><img style="width:528px" src="https://miro.medium.com/max/720/0*GuDKE20d11VsoqZi"/></a><figcaption>A natural ECM</figcaption></figure><p id="5d2e3c59-2ac4-42c2-9340-9133e406d36d" class="">
+</p><p id="62cd19cc-fae1-41a1-8ded-2821177289b7" class="">Once we take the cells out of a body it does not have an ECM. This confuses the cell, so we give it a fake ECM and call it a scaffold. They are made out of a fancy material called <strong>collagen microspheres</strong>, collagen being an important substance in a natural ECM.</p><p id="a1364d9d-6e15-4858-b643-c1cc569da1fc" class="">
+</p><figure id="39c8e63f-9ea5-4fdf-a640-8ff1e40be466" class="image"><a href="https://miro.medium.com/max/1231/0*_ujVyz8ouQTX7WcQ"><img style="width:528px" src="https://miro.medium.com/max/1231/0*_ujVyz8ouQTX7WcQ"/></a></figure><p id="f7279882-31be-4688-987f-17dc86a06602" class="">
+</p><p id="24872bd3-788b-4303-acac-a596e87e5d3c" class=""><strong>The myotubes then become myocytes</strong>. These are the real-deal muscle cells and are often called muscle fibres. In order for a myotube to turn into a myocyte, transcription factors alter gene expression. This means that certain genes are turned “on” or “off” to change the characteristics of the cell.</p><p id="e5c345d2-a1d8-4cff-a323-cf7ab339742c" class="">
+</p><p id="e5df7aac-5e01-49d8-9ce8-e6caf46b2aa0" class="">Since this is happening <em>in vitro</em> and not all natural properties are present, some extra assistance is required. The <strong>cells require a nutrient-rich medium</strong> similar to what they would have <em>in vivo</em> to proliferate. The medium that is currently used is<strong> fetal bovine serum,</strong> <strong>an expensive and questionably sourced substance</strong> (more on that later).</p><p id="8c31204c-c612-4252-9700-d2f24caa581b" class="">
+</p><figure id="933e2e34-7bb0-4e53-994a-a894b0cddc59" class="image"><a href="https://miro.medium.com/max/840/0*EUgVWtq8iTBLWLEV.jpg"><img style="width:528px" src="https://miro.medium.com/max/840/0*EUgVWtq8iTBLWLEV.jpg"/></a><figcaption>This 500mL bottle of FBS costs over $10,000</figcaption></figure><p id="1808431a-5bff-4766-bafd-4a44dfc1b8c1" class="">
+</p><p id="7d65e325-34ee-4600-8848-e511fdd434d8" class="">Now we’ve got some myocytes who have myocyte neighbours. We need these <strong>neighbour myocytes to fuse</strong>. Interestingly, allowing the muscle cells to contract aids in myocyte fusion.</p><p id="1c548841-2835-4504-b9e2-fcaa4ed9949d" class="">
+</p><p id="2c6bf68b-4478-4d55-8510-ac421460352f" class="">Yes, that’s right; These muscle cells can work together in a petri dish to <em>contract</em>! <em>In vitro </em>contraction stimulates protein synthesis which reduces proliferation time and increases quality of the products. Check it out:</p><p id="ca97b659-e23c-4ef2-96b6-c635c351273d" class="">
+</p><p id="e8459643-6ecb-41c6-9c7f-2e2123f8bcca" class="">Muscle cells contracting without external stimulus in a Peetree dish!</p><p id="8f3e83d7-31bf-4b98-8295-f1c22b34be09" class="">
+</p><p id="aa61c61d-f4e1-4ddd-92f2-71af01f243c5" class="">Muscle contraction can be promoted by seeding the cells around a gelatin ring. Using the ring, myotubes are compacted together in a way to forms a ground beef.</p><p id="c0f2666f-8997-4171-b2b2-24ddcc573efa" class="">
+</p><p id="b30bf472-7519-431a-96cf-cae08bae4018" class="">After <strong>several weeks of proliferation, the cells are ready to be compacted into a specific shape and form.</strong> If you want a hamburger, it can be shaped as such. A chicken nugget? Done. A steak? Well… that’s more complicated.</p><p id="a10ad9c3-1ebe-4a18-a165-b1b79335f92b" class="">
+</p><p id="cfac6799-99b5-4d96-9cf4-35154b1d705e" class="">Now, ladies and gentlemen, you have a slab of lab-grown meat.</p><figure id="d20a1664-e536-478c-97d3-6acfef4d2ce5" class="image"><a href="https://miro.medium.com/max/1280/0*Iq1HYrOAMArYhJSs"><img style="width:624px" src="https://miro.medium.com/max/1280/0*Iq1HYrOAMArYhJSs"/></a><figcaption><a href="https://www.ju.st/en-us/stories/meat">Just</a>, an alternative egg and dairy company, recently released cultured beef burgers</figcaption></figure><h1 id="41306425-36d4-4e24-9ed8-35316cd22b64" class=""><strong>Lab-grown meat’s juicy secret</strong></h1><p id="6c1a6879-6f4e-4232-8d6b-d2e8d7e68fda" class="">All-in-all, cellular agriculture is an ideal alternative to current unsustainable meat production. But there is one major drawback to this technology: fetal bovine serum. FBS is the medium that contains necessary nutrients for cell growth and is currently essentially irreplaceable. It’s <strong>sourced from a fetal cow</strong>, making it scarce and expensive.<strong> FBS comprises 80% of the cost of lab-grown meat. </strong>In addition to being expensive, both the pregnant cow and the fetus die in the extraction process, <strong>eliminating the cruelty-free appeal</strong> of lab-grown meat. On top of that, by using fetal cow blood, the risk of bacteria such as E.Coli contaminating the product remains.</p><p id="9f161543-2607-44ab-81a8-0ee7c1edf1b3" class="">
+</p><figure id="54f95fb0-1bfa-4a8c-9257-9f6233ef53d6" class="image"><a href="https://miro.medium.com/max/1180/0*0HJOFKe23C1EuH_n.jpg"><img style="width:480px" src="https://miro.medium.com/max/1180/0*0HJOFKe23C1EuH_n.jpg"/></a></figure><p id="17cff86d-6e2c-4a61-b156-d7e8008b3387" class="">
+</p><p id="c3e3ed0a-c502-4191-b2de-396fad763855" class="">The problem is, <strong>FBS is important to the process.</strong> Imagine trying to grow a tree on your kitchen table by simply putting a seed down. It wouldn’t work. Once you put the tree in a planting pot and give it everything that it needs to grow (soil, water, sunlight), it gets the illusion that it’s in nature and therefore it should be growing. FBS is like the planting pot of cellular agriculture with essentail nutrients for the cells… except this planting pot is made of really expensive baby cow blood extracted using questionable ethics… kind of the same…</p><h1 id="5c47b619-3a6b-4988-ae0f-50f25120614e" class=""><strong>Where is the field at now?</strong></h1><p id="e91daaab-bdd4-4884-99e6-e64d2029515e" class="">It’s under the cows, silly. Haha. Ha. Anyway…</p><p id="9e89e987-a981-49a6-b331-b7b388de1f7a" class="">
+</p><p id="6a70bc82-7dd5-406f-b194-af8120122bd4" class="">The first cultured burger was made in 2013 and was priced at $300,000. As of 2017, a <strong>lab-grown patty costs $11.36</strong>. While still over twice the price of a Big Mac, this rapid decline in cost is something to be commended.</p><p id="09e7caab-435a-4411-ba93-41d7f5ddab99" class="">
+</p><p id="9d4e9d9f-c1fa-48f2-a79f-10a1fe16080d" class="">According to food critics, a difference in texture and taste can hardly be noticed and emerging technologies are anticipated to make the burger seem even more like a traditional patty. Companies are working with <strong>3D bioprinting to create a myotube formation</strong> that is replicable and intertwines fat cells seamlessly. More research is also being done to find the ideal location of the muscle biopsy to get the perfect taste and fibre-type composition in the original stem cells.</p><h1 id="c7200501-0dd9-49ad-ab96-6f5e5aeff8ce" class=""><strong>Key Takeaways</strong></h1><p id="a804902d-6e3a-4c4b-95ac-9cf3e35026e0" class="">Current meat production is not sustainable. Lab-grown meat uses less water and land, emits fewer greenhouse gases, has more nutritional potential, could slow antibiotic resistance and will cost less than current meat products.</p><p id="0c9c10cc-9af9-46d1-8862-92da1312e70b" class="">
+</p><p id="0e5136b0-8723-499e-a450-4e171323e4a1" class="">The process involves allowing a stem cell to proliferate with the help of a scaffold and nutrient-rich medium until there are hundreds of thousands of cells. The cell needs to feel like it’s in a living body in order to proliferate.</p><p id="9960c76a-5526-44a3-b875-fce552314ff8" class="">
+</p><p id="6ebc5555-adf0-4f9f-af7c-45401ed70ea3" class="">Fetal bovine serum is currently the largest expense, reduces safety and eliminates the cruelty-free appeal of cellular agriculture. An alternative must be found in order for cultured meat to scale.</p><p id="d6c7c401-d019-4274-a90f-0da86dfa4c75" class="">
+</p><p id="1b3622b6-9413-4995-866b-621c238164cf" class="">Cellular agriculture has a lot of exciting advancements coming up the pipeline. It is still a very early field with a lot of potential and tons of room for growth. I’m counting down the days until McDonald’s is serving you a lab-grown Double Big Mac.</p><figure id="1428d3e0-8254-4813-9d8b-0256123ffe60" class="image"><a href="https://miro.medium.com/max/720/0*d8NT8pmyxstAYhJV"><img src="https://miro.medium.com/max/720/0*d8NT8pmyxstAYhJV"/></a></figure><p id="4cb81cf6-ae93-48e2-b727-94bb047cdcbf" class="">
+</p><p id="68a309a8-1e72-4384-b435-3d4ab059e24f" class="">Whether or not you believe that cultured meat is the answer, we are undeniably facing a problem. The meat industry is contributing to global greenhouse gas emissions at an astonishing scale and the current leading solution is vegetarianism. Similarly, the forefront tactic to end antibiotic resistance right now is <em>awareness</em>. The field is young and holds a lot of promise, particularly with the integration of various technologies such as robotics, nanotechnology and genetic engineering. <strong>Cellular agriculture is a solution to a handful of problems that is being fed to us on a silver spoon.</strong> And to be honest, I miss beef so let’s make this happen.</p><p id="8bbaec6e-6d45-4ecc-9bd8-5e5532f81219" class="">
+</p></div></article></body></html>
