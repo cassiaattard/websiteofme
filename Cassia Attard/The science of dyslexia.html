@@ -1,0 +1,689 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>The science of dyslexia</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="319c2695-708e-4c8d-b30a-48b8240b9672" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🔡</span></div><h1 class="page-title">The science of dyslexia</h1></header><div class="page-body"><p id="715eca53-1183-47cb-9347-1330ab323c99" class="block-color-gray_background"><a href="https://medium.com/@cassieattard/the-science-behind-dyslexia-d25cef00d91">Read this on Medium</a></p><p id="2c9e8526-a299-4076-8b5f-149104c90e90" class="">
+</p><p id="209259b6-42ff-4393-855e-654398ef9126" class="">Earlier this week, I gained a surprising insight during a family dinner-table conversation.</p><p id="1d91a2fb-ad9a-4681-82fd-ecae75bb682c" class="">
+</p><p id="a571b25e-d6c8-413a-ab4b-6fed9f846ee6" class="">One of my dad’s co-workers, whom I know quite well, is dyslexic. I’ve always known this about him but didn’t quite understand the severity of the condition, “because of spell check, Brandon’s emails are actually pretty good” my dad explained, <strong>“but a whiteboard is his Achilles heel. It’s absolute gibberish when he gets up there.</strong> Don’t even ask him to spell the word ‘cake’”.</p><p id="c0fd7d03-7ae4-4397-8721-699585776cf8" class="">
+</p><p id="c95d67de-fa5b-4f4b-ab9d-ce6f3fe5112d" class="">Brandon is smart and quite successful. In his early 20&#x27;s, he took a low-paying job in a Michigan automotive factory. A few years later, at a company-record-breaking age, Brandon was scooped up for C-suite training.<strong> </strong>The training involved completing a fully-paid Executive MBA. Non-negotiable.</p><p id="5deb723b-6794-4828-a39c-b47ca5baea97" class="">
+</p><p id="c505a358-9156-40b6-82ec-6831eceeae80" class="">Despite his unprecedented speed flying up a money-logged corporate ladder, Brandon quit. He couldn’t do an MBA. His dyslexia didn’t allow for reading, essay writing, or test-taking. And there was no technology or system in place to make it possible.</p><p id="7713aebc-a553-4058-966d-b4adb00f3a7c" class="">
+</p><p id="dd871259-2601-4797-a6f5-ab92d6557e8e" class="">Brandon has since had a fairly successful career. But as it turns out, he’s an anomaly for adults with severe dyslexia.</p><p id="aba5980e-44be-451d-b561-7b6d5f509a70" class="">
+</p><p id="a70cd5f8-2d8e-443c-bcdc-b1d214b3c85b" class=""><strong>This story sent me on a week-long spiral to understand the science behind dyslexia. I had a hoot learning all of this and personally found it super interesting.</strong></p><p id="85c86502-3fc7-4cab-9d44-1e9b3bfb9ef6" class="">
+</p><p id="f7775899-49c9-475b-b861-63733e482087" class="">I’ll also be realizing an audio version of this article so that dyslexic people can learn from it.</p><p id="526ad879-42ff-479c-b075-95bf41366d36" class="">
+</p><p id="5a63f03e-5788-4a83-870f-3a429dd9a8d0" class=""><strong>In this article, I’ll cover:</strong></p><ul id="eb76e744-90c0-40cd-bda2-0edc844da8a5" class="bulleted-list"><li>What dyslexia is</li></ul><ul id="094b23bb-699d-4333-9c20-61d4c577c265" class="bulleted-list"><li>The connection between reading and phenomics</li></ul><ul id="958ae680-fbaf-4704-adfb-df6cc1dddda9" class="bulleted-list"><li>Gene expression of dyslexia</li></ul><ul id="387dc6ab-17f8-4226-9c60-1c4ae3dc846c" class="bulleted-list"><li>Dyslexic brain physiology</li></ul><ul id="a90db81b-587e-4f4c-becf-7ced3400c87a" class="bulleted-list"><li>The visual magnocellular system</li></ul><h1 id="8569ae39-b163-4876-8eb9-d07fa71722e2" class=""><strong>Dyslexia 101</strong></h1><p id="631f1498-19f0-497e-a115-4d0d89302661" class=""><strong>5–12%</strong> of the population suffers from dyslexia. The disorder involves difficulty reading, writing, and speaking. Dyslexia has no correlation with intelligence, education level, or standard vision problems.</p><p id="fc5b9c4a-b0da-4127-9f83-c5e2ed23cbe3" class="">
+</p><p id="fe57ab8b-787d-48d9-beaf-9182dfd0671d" class="">The disorder is hereditary, but can also be acquired later in life from brain injury or stroke.</p><p id="3bf22b8a-b102-404b-a3cc-a993c8c316a4" class="">
+</p><p id="29c87eaf-fda7-4674-acb4-94b1e932739e" class="">Dyslexia is expressed in a wide range of severities. Some people with dyslexia can learn to read and write with specific tutoring, while others never can.</p><p id="6c5cc429-9b53-4324-887a-cdb6dfd71a45" class="">
+</p><p id="5b6ea322-be79-46c1-9ab0-82aa05e5f287" class=""><a href="https://www.sciencedirect.com/science/article/abs/pii/S1479235405000805">95%</a> of people with dyslexia also have a related learning disability or an autoimmune disorder — ADHD, autism spectrum disorder, dyspraxia, OCD, Tourette’s syndrome, etc. <a href="https://www.youtube.com/watch?v=_dPyzFFcG7A"><strong>35% </strong></a><strong>of dyslexics drop out of high school.</strong></p><p id="7f223aec-196b-4bca-824a-3b63ca8f6cc2" class="">
+</p><p id="c361a154-18cc-44d5-82b7-16a8f5552253" class=""><strong>Albert Einstein, Leonardo Divinci, </strong>Pablo Picasso, Richard Branson, Walt Disney, Henry Ford, Tomas Edison,<strong> </strong>and<strong> Steven Speilberg</strong> are/were dyslexic.</p><h1 id="d80cce3f-38ea-4621-b5f6-72da4841c646" class=""><strong>What dyslexia looks like</strong></h1><p id="22aa9f3a-339b-4ad0-9eb1-adfa0a335711" class="">The concept of dyslexia confused me as a kid. How could someone see the entire world without vision problems, but letters and numbers appear scrambled? I’ll explain that in excruciating<em> </em>detail soon. But first stop, Empathyville:</p><p id="cf48b5f2-d33f-460f-adfc-903baa872118" class="">
+</p><p id="cc276fd4-2c13-4667-9953-85ffd7ef68a0" class="">People with dyslexia often experience:</p><ul id="8a718e19-2d42-410c-8ac2-c1f388e69bba" class="bulleted-list"><li>Backwards or upside-down letters</li></ul><ul id="e023460c-2d2e-4cd8-af28-64a44bf8e39a" class="bulleted-list"><li>Text jumping around the page</li></ul><ul id="9cd88cbc-4653-4583-ae61-15a51ee55d49" class="bulleted-list"><li>No difference between similar letters (ex. e,o,c)</li></ul><ul id="3e33a1cc-a7f7-4d0c-b791-8c5dbf964701" class="bulleted-list"><li>Words and letters might be jumbled up</li></ul><ul id="26a38de8-4d77-4edf-b1da-607ef59660cb" class="bulleted-list"><li>Different words smushed together</li></ul><ul id="05e2dad6-6bb5-46eb-9c13-6b6f2aeffc55" class="bulleted-list"><li>Mispronouncing names or words</li></ul><ul id="9f92fe44-c73c-41b5-85f7-d1c54581d240" class="bulleted-list"><li>Nausea while trying to read</li></ul><p id="54751249-4b02-4330-849a-52d1f4e7fd79" class="">
+</p><p id="1e0a5d31-83b8-4d95-8fd8-6b4af7b593a9" class="">Two examples of what a piece of writing might look like</p><div id="dd80cf3c-81a6-4541-9499-6d98a478f0da" class="column-list"><div id="f2678af9-d52c-4624-8339-c71723771b71" style="width:68.75%" class="column"><figure id="60831141-08a1-4b49-b07f-90db1f07cd5c" class="image"><a href="https://miro.medium.com/max/718/1*ZNETLqv4FHBzxoz7CjiojQ.gif"><img src="https://miro.medium.com/max/718/1*ZNETLqv4FHBzxoz7CjiojQ.gif"/></a></figure></div><div id="5f2aad5e-beff-427a-aebf-c909571a7f66" style="width:31.25%" class="column"><figure id="3a437ec0-0999-456a-a589-e73164d34cb2" class="image"><a href="https://miro.medium.com/max/221/1*0e8djZ_qUNGL4r99zoZM9w.png"><img style="width:144px" src="https://miro.medium.com/max/221/1*0e8djZ_qUNGL4r99zoZM9w.png"/></a></figure><p id="54316119-8d11-4279-9734-311715858745" class="">
+</p></div></div><h1 id="50ea555b-289a-464c-95b6-ef6a49c3a4ba" class=""><strong>Why a dyslexic brain turns words into gibberish</strong></h1><p id="6e3eecd0-45fc-40c1-9d24-eab2ea715451" class="">Our brains are not evolved to read. In Darwin’s eyes, reading and writing are fairly recent advancements. We’re evolved to communicate through speech. However, the reading and speaking functions of the brain are very intertwined.</p><p id="eeee7fc6-01b1-4729-aeb1-801f52167d39" class="">
+</p><p id="78d97bda-0c63-4bca-b4d0-240a8caba944" class=""><strong>Reading can be broken down into two cognitive processes:</strong></p><ol id="c28dbbc4-a43a-4d53-a62b-9715c78312d0" class="numbered-list" start="1"><li>Grapheme-phoneme mapping: combinations of letters (graphemes) are mapped to sounds (phonemes). AKA, the relationship between a word and its sound.</li></ol><ol id="48e59f97-939e-4e02-af93-190ee2f7efd3" class="numbered-list" start="2"><li>Visual word form recognition: mapping familiar words onto their mental representations. AKA, you don’t have to sound-out the word ‘cat’. You know what it looks like. Or more importantly, you don’t have to sound-out ‘eight’ or ‘knight’. Who the fuck decided on that spelling?</li></ol><p id="26ca0257-168b-484d-8810-1322a577f87a" class="">
+</p><p id="9c5b2a13-44f2-4f53-8297-6cdc6639d537" class=""><strong>Grapheme-phoneme mapping</strong> <strong>is the most impairing factor of dyslexia. </strong>Most dyslexic reading difficulties are due to failure to rapidly translate letters into the separate sounds in the words which they stand for. Phonemic difficulties make it hard for a reader to break down and manipulate words.</p><p id="7953cc0d-bf64-4c98-ad4c-7ce07023610e" class="">
+</p><p id="42a08775-d482-42a5-9f45-a19ecc0ce56e" class="">The director of Georgetown University’s Center for the Study of Learning explains, “You can think of the reading brain as moonlighting,” says Guinevere Eden, <strong>“Your brain will essentially take other brain areas — that were designed to do something else — and use [them] toward reading.”</strong></p><p id="0417cbd1-2fbc-4945-8193-cd792d4c120f" class="">
+</p><p id="094e79af-93d3-4d1e-a6cb-fcdb84b05c0e" class="">As a result of this, <a href="https://dyslexiaida.org/the-myths-and-truths-of-dyslexia/">dyslexia also presents differently depending on what language you speak.</a></p><p id="8543099d-3f17-4ac0-a247-fc760a774b5a" class="">
+</p><p id="62a7e594-81b9-4eb0-8316-ad530dcb1eea" class="">Think about phenomics like this 1989 comedy. Sound and sight go hand-in-hand:</p><p id="265f7e33-e732-43a0-be70-5812c4c4b74b" class="">
+</p><figure id="4509b15e-026f-4643-93a5-8682f27c2819" class="image"><a href="https://miro.medium.com/max/312/0*YK_zrbN5bGnRNBOC.jpg"><img style="width:240px" src="https://miro.medium.com/max/312/0*YK_zrbN5bGnRNBOC.jpg"/></a></figure><h1 id="17965b13-4162-4794-86e2-910112e489de" class=""><strong>The Dyslexic Brain</strong></h1><p id="e5e33458-a604-4e0d-9af7-0d6c2dea0957" class="">When I started researching this disorder, the first thing I wanted to know was the physiological differences in a dyslexic brain. Turns out… that’s complicated. I’ve broken it down into 6 chunks.</p><h1 id="4dc9c98d-dca4-4adb-8bf2-8c51bb5a3717" class=""><strong>Changes in brain matter</strong></h1><p id="16beb667-a4a6-4061-8a66-ed3698d3c99f" class="">The brain is comprised of white and gray matter. Gray matter sits on the outside of the brain doing important things. White matter sits on the inside of the brain doing important things.</p><p id="16e0e456-6b31-4a57-900d-f0c8443c0753" class="">
+</p><p id="3c238fc2-ea7d-461a-94cf-870a91c72b47" class="">The brain is also divided into a right and left hemisphere. The left hemisphere of the brain is associated with tasks such as reading, writing, and processing language.</p><p id="5bf02d57-1fdf-42b5-b503-a1418fb59d2a" class="">
+</p><p id="503eb695-366f-4a95-a894-02007a17cb0a" class="">The left hemisphere&#x27;s language processing is then divided into three areas: the occipito-temporal area, parieto-temporal area, and inferior frontal gyrus.</p><p id="d1aab49a-3085-488d-b175-59df670ba368" class="">
+</p><figure id="d0a741ad-3e11-49f5-a8b1-6b20cde60c6c" class="image"><a href="https://miro.medium.com/max/1200/1*K8Nkm1-ML0sQ9tH1N7JaCw.png"><img style="width:624px" src="https://miro.medium.com/max/1200/1*K8Nkm1-ML0sQ9tH1N7JaCw.png"/></a></figure><p id="200b9408-0c6b-4364-85f5-10f09e8616cc" class="">
+</p><p id="4f04e5bb-15b6-47b5-a2ca-a642069c7cac" class=""><strong>People with dyslexia have been found to have less gray matter in the left parieto-temporal area than nondyslexic individuals.</strong> Having less gray matter in this region of the brain leads to problems processing the sound structure of language.</p><p id="54a522de-1056-469d-8b37-1816303742c9" class="">
+</p><p id="a67272d8-da5d-41e1-a2d4-b8202916a07a" class="">Many people with dyslexia also have less white matter in this same area than average readers. In a study examining nondyslexic readers, higher reading proficiency is correlated with more white matter in the parieto-temporal area.</p><p id="f2ab688f-4722-4006-bc76-57483ffa621c" class="">
+</p><figure id="b126d4c2-4a5e-4cde-ae19-aa11d9f872b0" class="image"><a href="https://miro.medium.com/max/553/0*CYm4LbTmF5VBgt21.jpg"><img style="width:384px" src="https://miro.medium.com/max/553/0*CYm4LbTmF5VBgt21.jpg"/></a><figcaption>Representation of a dyslexic brain with less gray and white matter in the left hemisphere</figcaption></figure><p id="ebf96b74-de6c-46a4-9c1b-c183c8f120aa" class="">
+</p><p id="057e9fe2-40f0-474c-9a9c-93686b43407e" class="">It’s unclear whether the degraded white and gray matter is a cause of dyslexia or a consequence of never learning to read. However, recent studies are pointing towards believing reduced matter is a <em>cause</em> of the disorder:</p><ul id="5c79c317-1f64-4ab5-b6ec-92ca5f92c460" class="bulleted-list"><li><a href="https://www.pnas.org/content/104/10/4234">In one study,</a> dyslexic children exhibited reduced left parietal and occipito-temporal activations relative to both age-matched children and reading ability-matched children of different ages.</li></ul><ul id="3df0deaa-ceb8-4242-a3e3-0a27f11fa401" class="bulleted-list"><li><a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0034909">A study</a> examined kindergarten children before learning to read. Less white and grey matter was seen in dyslexic children than non-dyslexic children.</li></ul><p id="511c8ccd-1198-43cf-b122-c8c094f28edb" class="">
+</p><p id="8fd38c1a-2364-4e97-843f-4634d6a9e112" class=""><strong>Okay. We’re officially done with pre-requisite information. Time to dive into the juicy stuff!</strong></p><h1 id="dfebb7ad-cd01-453c-9a90-c625f1d3d5ee" class=""><strong>The Dyslexic Genome</strong></h1><p id="f4bab9a8-454b-4187-80f5-09b7b72707ce" class="">Dyslexia is a hereditary condition. There are three genes that have been found to correlate to the disorder: <strong>DYX1C1</strong> (dyslexia susceptibility 1 candidate 1), <strong>DCDC2</strong> (short for Doublecortin Domain Containing 2) and <strong>KIAA0319.</strong></p><p id="7c3cc6eb-a4ba-4dbb-bee6-eab8ccc595cf" class="">
+</p><p id="655f9e6b-b5dc-415c-9d25-6aada217e6ad" class="">Notably, DCDC2 is also associated with deafness.</p><p id="d12039d6-1ff9-4514-9f64-1b4b5dfc1f6a" class="">
+</p><p id="e80f05b3-1f1b-42d5-93ae-6bb6a0e56914" class=""><a href="https://www.sciencedirect.com/science/article/abs/pii/S0006322312004453">An interesting study</a> found results of single nucleotide polymorphisms (SNPs) within these genes that lead to dyslexia.</p><p id="0b44e536-b3dd-4a3e-96d8-7a2db07188ee" class="">
+</p><p id="32b6df45-bcbd-472f-9ab3-f498f3e2e32f" class=""><strong>SNPs</strong> are DNA sequence variation occurring when a single nucleotide (A, C, T or G) differs from normal. It’s a tiny<em> </em>error in a gene.</p><p id="7cb1f5aa-bcfd-4fe3-a003-79465a53c2fe" class="">
+</p><p id="386d5149-3dd9-4562-bde0-42e9db1e17de" class="">You can think of an SNP like a consequential 1-letter typo.</p><p id="f7688a9c-afd4-4850-a995-d52e71a6d971" class="">
+</p><figure id="05bf1fe4-0d21-4bdf-9bac-e858fe98e788" class="image"><a href="https://miro.medium.com/max/640/0*ABa0sOIW2NqnGGeo.jpg"><img style="width:480px" src="https://miro.medium.com/max/640/0*ABa0sOIW2NqnGGeo.jpg"/></a></figure><p id="619ad7ff-d3ee-4fce-b628-15b4bce4f646" class="">
+</p><p id="cba212ae-b865-49f5-abde-420c83b200a3" class="">The main impact of the SNPs studied within these patients was white matter structure. Clusters of altered white matter from genes were all located in the left parieto-temporal region, the part of the brain responsible for word-analysis.</p><p id="49f51c36-3f3b-48fe-8cb9-1a938fe37c85" class="">
+</p><figure id="32b5f1ca-b6b3-4edf-bf50-91444ebe970d" class="image"><a href="https://miro.medium.com/max/856/1*1v1r6xQ2NoVNZEAyXsW5zQ.png"><img style="width:528px" src="https://miro.medium.com/max/856/1*1v1r6xQ2NoVNZEAyXsW5zQ.png"/></a><figcaption>A) White matter clusters showing significant association between SNPs and white matter volume in the left parieto-temporal region. (B) White matter volume distribution for genotypes of each SNP (error bars: 1 SEM). (C, D) Overlap between the significant regions.” (Darki, 2012)</figcaption></figure><p id="a9249be3-db83-427b-8dcb-386ca2caef54" class="">
+</p><p id="05a901c5-a42b-4b58-bf27-ff0e50b0d29b" class="">Different parts of the brain like to work together. When they can’t, it’s bad news. The ‘overlap’ mentioned in images C and D is testing the hypothesis that interconnectivity between white matter regions is also hindered in dyslexia patients. This is hard to prove and the research around it is a little bit shaky. The clusters viewed here and in other studies were too small to generate fibre-tracking.</p><h1 id="e5d52ff0-6f54-4b8e-ad71-46dc00bf2713" class=""><strong>Neuronal Migration</strong></h1><p id="4061b2f1-4ddc-4d89-b41c-4d0a0fa99d37" class="">Neuronal migration is an important process that is likely hindered in people with dyslexia.</p><p id="73257edf-7b84-44e9-b72f-0998360a1ad7" class="">
+</p><p id="d084874c-e8ba-492d-8d11-4758b2fa5987" class=""><strong>Neuronal migration </strong>is the method by which neurons travel from their origin or birthplace to their final position in the brain. Most neurons are born in a position different than they eventually reside.</p><p id="abebe0f0-591d-4012-be01-3ad76e650c0b" class="">
+</p><p id="a9915998-6bd8-492a-8adf-0028aa591d8b" class="">While the brain is developing during fetal and early childhood development, neurons are undergoing mitosis in the ventricular and subventricular zones of the brain. Neuronal migration is a necessary process required for proper brain architecture.</p><p id="72974a96-f924-4d59-91a2-213e6900cd7c" class="">
+</p><p id="d6c94760-6d53-45dc-a94c-dcdcca3d3843" class="">After their birth, these neurons have to populate the six cortical layers of the brain. So, they move.</p><p id="c42a697b-3271-42ca-b3cb-9ffd64b92285" class="">
+</p><p id="67800528-ba8b-476c-b372-df830c21028f" class="">It’s like a baby neuron leaving the maternity ward and going home. It can’t live in the maternity ward forever; it’s got stuff to do.</p><p id="39cfc85a-39ff-4127-a599-ae1015863448" class="">
+</p><figure id="afdabde8-ca55-47bc-882f-9e1217b34680"><div class="source"><a href="https://www.youtube.com/watch?v=ZRF-gKZHINk&amp;feature=emb_title">https://www.youtube.com/watch?v=ZRF-gKZHINk&amp;feature=emb_title</a></div><figcaption>This is a neuron moving to its new home 🤯</figcaption></figure><p id="cc5c0fd4-30a7-470a-a2f2-a945bb8e6f83" class="">
+</p><p id="ea91f755-6f4f-40a6-b898-c5c85b73df2c" class=""><a href="https://www.ncbi.nlm.nih.gov/pubmed/21698230">A 2011 study</a> showed that the protein expressed by DCDC2 is associated with <em>other </em>proteins involved in establishing <strong>cell polarity.</strong> In other words, this protein interferes with the shape, size and/or organization of cellular components while a neuron is being developed.</p><p id="c6585e68-2313-4bea-b195-24cfc81a398b" class="">
+</p><p id="1d79f60b-9d1e-4e6c-8eff-959d487dee92" class="">Cell polarity has a major impact on neuronal migration.</p><p id="2fbf7557-7d77-4b05-ad03-2f9554735b8d" class="">
+</p><p id="cef47774-83a3-4fbc-ba5c-3621a1fc5b06" class="">As a result, people with dyslexia-encoding SNPs on the DCDC2 gene experience hindered neuronal migration during early brain development. The neurons don’t end up where they’re supposed to be.</p><p id="b4b87216-14bc-4723-a439-92f9ed6b3f83" class="">
+</p><p id="02d758a5-bb6b-4756-914b-43332eadca01" class="">Impaired neuronal migration means that every neuron leaves the maternity ward. And some leave the maternity ward but get lost and never make it home.</p><p id="ebc0f980-e787-49e8-b61f-fb9404be5495" class="">
+</p><p id="1edbc75d-5204-4a7e-96c8-56a497d480c1" class="">This provides a strong explanation for the limited white and gray matter in the left hemisphere of the brain. It also suggests that hypotheses of weakened interconnectedness of cortical regions are <em>probably </em>correct.</p><h1 id="56030f4a-022f-427f-8bb5-c7e2b727994e" class=""><strong>Gender imbalance in dyslexia</strong></h1><p id="37a747d0-77ad-4289-9fb1-5fff9a971dc9" class="">It’s widely accepted that dyslexia impacts men and women alike.</p><p id="eb20da96-cbb7-4254-96ec-8d986d2c5e3e" class="">
+</p><p id="3e908568-b0d7-4df6-bbe2-9ff1b1876737" class="">But… maybe not.</p><p id="3a136125-a9a0-4910-9421-d70d49fb648b" class="">
+</p><p id="34743fab-95d3-48db-9361-e055c54ad53e" class="">The aforementioned DYX1C1 gene houses the SNP rs3743204. This is the specific 1-letter genetic error that codes for dyslexia on the DYX1C1 gene. This SNP is inherited as a haplotype.</p><p id="5ccd5128-ee3b-4740-bee6-f6cbe2f580a8" class="">
+</p><p id="8705a640-502a-484e-9dda-bb7e5d8d2260" class=""><strong>Haplotypes </strong>are multiple SNPs that are often inherited together, coming from one parent. They’re like fraternal twin SNPs. They’re different but come together.</p><p id="1edea994-a99b-4093-a371-8a25710db833" class="">
+</p><p id="df630344-c6b2-4213-bb75-249d67b38e7c" class="">Because it’s a haplotype, SNP rs3743204 is inherited with SNP rs3743205. Now you’ve got 2 tiny errors. This haplotype is seen <strong>specifically in female patients. With both SNPs present, </strong><a href="https://www.ncbi.nlm.nih.gov/pubmed/19423554"><strong>estrogen’s role in signalling pathways gets damaged</strong></a>.</p><p id="29b8c42f-7f5b-4e81-a671-36a4c260d1a6" class="">
+</p><p id="b1621bcc-825e-42ae-95b3-333762e401e9" class="">Normally, estrogen receptors bind to an endogenous ligand, 17b-estradiol. 17b-estradiol is an essential protein for brain development, neural differential and neuroplasticity. Some studies show that they are involved in cognitive processes and memory, as well.</p><p id="1878b629-4eda-46a0-87ea-74cdb779bfba" class="">
+</p><p id="14560868-ec1b-4669-85de-70134b159951" class="">These twins, SNP rs3743204 and SNP rs3743205, are involved in a multiprotein complex that activates the protein ligase CHIP (carboxy terminus of Hsc70-interacting protein). <strong>CHIP targets and breaks down estrogen receptors.</strong></p><p id="926b3960-9b0e-4463-bb6d-3c8ae7dd6dda" class="">
+</p><p id="95df44cd-6b20-4866-a107-3a110a8a6e54" class="">So, while dyslexia is present in an even number of males and females, females may get the short end of the stick with impaired estrogen receptors.</p><h1 id="a98044a7-8a71-497e-947c-2eb78ceb3fe3" class=""><strong>Dyslexia and Autoimmune Diseases</strong></h1><p id="e2ecdfc8-e70e-43b1-8669-e5e4fe0e787a" class="">People with dyslexia are <strong>30–40%</strong> more likely to develop an autoimmune disease.</p><p id="fbd1abb5-d542-4030-90fa-b6d41637fc7d" class="">
+</p><p id="67b59c37-ddac-4a08-a8ab-fe4def566f25" class="">Over 15% of people with dyslexia have been recorded to have <em>severe</em> autoimmune diseases, such as arthritis, lupus, and severe allergies.</p><p id="31fc3ea6-dbde-4c89-925c-f293161ac42a" class="">
+</p><p id="1b63ac84-724a-47cf-b3ac-8cf1e26d400a" class="">The aforementioned KIAA0319 gene lies in a large stretch of DNA on chromosome 6 called the <strong>HLA complex</strong>. The HLA complex gives rise to the human immune system.</p><p id="7206f7b9-e7b1-4cde-9624-46bb62368cfa" class="">
+</p><figure id="452c7983-b7c1-43d7-9d74-90dd723e0466" class="image"><a href="https://miro.medium.com/max/575/1*jkJLaIt6vPmvFjtZBH1ldg.png"><img style="width:576px" src="https://miro.medium.com/max/575/1*jkJLaIt6vPmvFjtZBH1ldg.png"/></a></figure><p id="4ecb3961-0014-4fee-be45-c653bc5fb5fb" class="">
+</p><p id="26e08659-f829-490c-a53f-b07fae3e0f77" class="">The KIAA0319 gene houses the SNP rs6935076. This SNP interferes with the HLA complex. This one little error can cause a slew of problems in the immune system.</p><p id="02341bae-5fbd-4651-a2f9-664f4e54bbca" class="">
+</p><p id="277b45ae-a5f3-4529-ba0a-c7fe8faa0c10" class="">I’m not going to chat further about the science behind dyslexia X autoimmune diseases because all of the genetic research on this subject was done in the late 1980s. And that’s old. Apologies.</p><h1 id="b958b9c7-e9b8-4adf-b489-7b0c7c39f28f" class=""><strong>Visual magnocellular system</strong></h1><p id="a576b4d0-8c9a-46da-b499-c7f789909e7e" class="">The visual magnocellular system is the part of the eye responsible for timing visual events while reading. It’s comprised of M-cells, which are up to 50 times the size of other ganglion (eye) cells.</p><p id="d4e87d57-14aa-4e3b-bd7a-eff0e60685e1" class="">
+</p><p id="4f5dff5b-905a-47b7-ae26-296ac8aeee6b" class=""><strong>Magnocells (M-cells) respond to rapid timely changes and therefore are more receptive to temporal changes, such as a light flicker or small movement. </strong>Nondyslexics don’t usually notice this movement because our retinal systems are designed specifically to suppress that signal. Hence, a rapid and accurate M-system is crucial to compensate for eye movements to keep our visual world stationary, and so it is essential for successful reading.</p><p id="4aed573c-e56f-4af9-946e-5fe96f5b96c1" class="">
+</p><p id="d2155472-6e40-43b4-bf06-ad9cf0590e4a" class="">Now you have one more thing to be grateful for, your functioning M-cells.</p><p id="c36ac32a-2aa9-45be-95ee-97928c04ea95" class="">
+</p><p id="61b55460-9b04-4817-ad71-ff5aac958c6a" class="">There is now a lot of evidence that many individuals with dyslexia have impaired development of their M-systems, causing letters to move around.</p><p id="6e9b4180-9920-4a83-ac8f-bbda711baa30" class="">
+</p><p id="fa588546-dea6-402c-b03e-199f6bb2dc0e" class="">Hindered neuronal migration in dyslexia patients during early brain development also impacts this important system. Because the neurons don’t position themselves properly, M-cells often end up in the incorrect layer of the retina. This leads to <a href="https://www.sciencedirect.com/science/article/abs/pii/S0028393218301155">reduced M-cell sensitivity</a> and therefore blurring of words.</p><h1 id="020b7c59-c20f-4dc6-93a5-eeef685d1374" class=""><strong>You can read this — appreciate that</strong></h1><p id="d4d53bbd-2bd6-4da6-b3b7-c3bf9a136268" class="">Although it likely seems trivial to anyone reading this, the ability to read is quite a complex skill. Writing is a relatively recent human invention. Only about 8000 years ago in ancient China did people begin to record agricultural transactions by making marks on clay tablets. Much later, around 4000 years ago, the alphabet was introduced in Egypt, where letters began to represent the actual sounds in words. Until the last century, reading and writing were almost exclusively taught to religious scribes.</p><p id="d9ef19fe-d646-424e-80b9-e283ba3bd726" class="">
+</p><p id="aac04de4-2216-44e6-88fa-6b0922ee3e85" class="">Literacy carried no selective advantage. Few people fell in love with their partner’s reading skills. Most historical rulers and kings could not read or write. It’s unlikely that this skill influenced how Genghis Khan fathered so many children. By 1950, only 55.7% of the population was literate.</p><p id="c86e81e2-fc1d-4d9a-b46d-c6007323c77d" class="">
+</p><p id="3cbe9a5e-5309-4687-be63-d01fcc4c5c30" class="">12% of the population, most with access to proper education, struggle extensively with literacy. When you look at the list of history-makers with dyslexia, there seems to be an ununderstood genius housed in the wiring of their brains. How can we harness this genius while enabling this 12% of the population to effectively read and write?</p><p id="4b6f872d-8d33-4be5-8350-f5058c493d68" class="">
+</p><p id="c12d24cc-8d40-422d-b730-f1b268206a83" class="">Thanks for reading ❣! You can reach out on <a href="https://twitter.com/cassiaattard">Twitter</a> or check out my <a href="https://cassiaattard.com/">website</a>.</p><p id="35406903-1b37-4d09-96a7-27d928e26930" class="">
+</p></div></article></body></html>
